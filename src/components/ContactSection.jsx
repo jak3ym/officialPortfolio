@@ -44,11 +44,11 @@ export const ContactSection = () => {
                 Have a project in mind or want to collab? Feel free to reach out. I'm always open to discussing opportunities.
             </p>
 
-            <div className = "grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                    <h3 className="text-2xl font-semibold mb-6"> Contact Info</h3>
+            <div className = "grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto max-w-6xl items-start">
+                <div className="space-y-12 flex flex-col justify-between h-full justify-center">
+                    <h3 className="text-2xl font-semibold mb-6 ml-15"> Contact Info</h3>
 
-                    <div className="space-y-6 justify-center">
+                    <div className="space-y-6 justify-center grid">
                         <div className="flex items-start space-x-4">
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Mail className="h-6 w-6 text-primary" />
@@ -56,14 +56,14 @@ export const ContactSection = () => {
                             <div>
                                 <h4 className="font-medium"> Email</h4>
                                 <a 
-                                    href="mailto:hello@gmail.com"
+                                    href="mailto:jakemakaling@hotmail.com"
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     jakemakaling@hotmail.com
                                 </a>
                             </div>
                         </div>
-                        <div className="flex items-start space-x-4">
+                        <div className="flex items-start space-x-12">
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Phone className="h-6 w-6 text-primary" />
                             </div>
@@ -77,25 +77,11 @@ export const ContactSection = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <MapPin className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h4 className="font-medium"> Location</h4>
-                                <a 
-                                    href="mailto:hello@gmail.com"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    US
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <div className="pt-8">
-                        <h4 className="font-medium mb-4"> Connect With Me </h4>
-                        <div className="flex space-x-4 justify-center">
+                        <h4 className="font-medium mb-4 ml-17"> Connect With Me </h4>
+                        <div className="flex space-x-4 justify-center ml-17">
                             <a href="https://www.linkedin.com/in/jakemakaling/" target="_blank">
                                 <Linkedin />
                             </a>
@@ -103,7 +89,7 @@ export const ContactSection = () => {
                     </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+                <div className="bg-card p-8 rounded-lg shadow-xs max-w-lg w-full" onSubmit={handleSubmit}>
                     <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
                     <form className="space-y-6">
                         <div>
