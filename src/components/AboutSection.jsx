@@ -11,7 +11,7 @@ export const AboutSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                    <h3 className="text-2xl font-semibold">Passionate Software/Hardware Engineer</h3>
+                    <h3 className="text-2xl font-semibold">Intro</h3>
 
                     <p className="text-muted-foreground">
                         Passionate Embedded Software and Electronics Engineer in MedTech with 5+ years of product development experience, having expertise embedded software and hardware design, and integrating wireless technology.
