@@ -2,22 +2,68 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-    // Frontend
-    {name: "HTML/CSS", level: 70, category: "frontend"}, 
     // Backend
-    {name: "Python", level: 95, category: "backend"},
-    {name: "C++", level: 90, category: "backend"},
-    {name: "MongoDB", level: 80, category: "backend"},
-    // Tools
-    {name: "Git", level: 80, category: "tools"},
-    {name: "Docker", level: 70, category: "tools"},
-    {name: "VS Code", level: 90, category: "tools"},
+    {name: "Python", level: 100, category: "backend"},
+    {name: "C", level: 100, category: "backend"},
+    {name: "C++", level: 100, category: "backend"},
+    {name: "Django", level: 90, category: "backend"},
+    {name: "Java", level: 75, category: "backend"},
+    {name: "Spring Boot", level: 60, category: "backend"},
+    {name: "Verilog", level: 70, category: "backend"},
+    {name: "MATLAB", level: 100, category: "backend"},
+    // Frontend
+    {name: "React", level: 80, category: "frontend"},
+    {name: "HTML/CSS", level: 70, category: "frontend"},
+    {name: "JavaScript/TypeScript", level: 80, category: "frontend"},
+    // DevOps & Cloud
+    {name: "Jenkins", level: 100, category: "DevOps/cloud"},
+    {name: "Github Actions", level: 100, category: "CICD/cloud"},
+    {name: "AWS (EC2, S3, RDS, AMI, etc.)", level: 100, category: "devops/cloud"},
+    {name: "Linux", level: 80, category: "devops/cloud"},
+    {name: "Docker", level: 90, category: "devops/cloud"},
+    {name: "Terraform", level: 60, category: "devops/cloud"},
+    // Database & Messaging
+    {name: "MongoDB", level: 80, category: "database"},
+    {name: "ActiveMQ", level: 60, category: "database"},
+    {name: "Snowflake", level: 75, category: "database"},
+    // Development Tools
+    {name: "Postman", level: 75, category: "sw tools"},
+    {name: "VS Code", level: 100, category: "sw tools"},
+    {name: "Wireshark", level: 80, category: "sw tools"},
+    {name: "SVN", level: 100, category: "sw tools"},
+    {name: "Selenium", level: 60, category: "sw tools"},
+    // HW Tools
+    {name: "Altium Designer", level: 100, category: "hw tools"},
+    {name: "CMW", level: 100, category: "hw tools"},
+    {name: "Spectrum Analyzers", level: 100, category: "hw tools"},
+    {name: "Oscilloscopes", level: 100, category: "hw tools"},
+    {name: "Signal Generators", level: 85, category: "hw tools"},
+    {name: "Multimeters", level: 100, category: "hw tools"},
+    {name: "Network Analyzers", level: 75, category: "hw tools"},
+    {name: "CST Studio", level: 75, category: "hw tools"},
+    {name: "SolidWorks", level: 65, category: "hw tools"},
+    {name: "Simulink", level: 60, category: "hw tools"},
+    {name: "LTSpice", level: 100, category: "hw tools"},
+    // Project Management
+    {name: "Jira", level: 100, category: "project management"},
+    {name: "Confluence", level: 100, category: "project management"},
+    {name: "Jama", level: 100, category: "project management"},
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "backend", "frontend", "devops/cloud", "database", "sw tools", "hw tools", "project management"];
 
 export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("all");
+
+    const formatCategoryName = (category) => {
+        const categoryMap = {
+            "devops/cloud": "DevOps/Cloud",
+            "sw tools": "SW Tools", 
+            "hw tools": "HW Tools",
+            "project management": "Project Management"
+        };
+        return categoryMap[category] || category.charAt(0).toUpperCase() + category.slice(1);
+    };
 
     const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory
 );
@@ -34,11 +80,11 @@ export const SkillsSection = () => {
                             key={key}
                             onClick={() => setActiveCategory(category)} 
                             className={cn(
-                                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                "px-5 py-2 rounded-full transition-colors duration-300",
                             activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary"
                             )}
                         >
-                            {category}
+                            {formatCategoryName(category)}
                         </button>
                     ))}
                 </div>
