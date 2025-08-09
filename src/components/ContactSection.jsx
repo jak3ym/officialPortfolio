@@ -2,29 +2,8 @@ import { Mail } from 'lucide-react';
 import { Phone } from 'lucide-react';
 import { MapPin } from 'lucide-react';
 import { Linkedin } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Send } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { useState } from 'react';
 
 export const ContactSection = () => {
-    const {toast} = useToast();
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        setIsSubmitting(true);
-
-        setTimeout(() => {
-            toast({
-                title: "Message sent!",
-                description: "Thank you for the message. I'll get back to you soon."
-            });
-            setIsSubmitting(false);
-        }, 1500);
-        
-    }
     return (
         <section
             id="contact"
@@ -89,53 +68,21 @@ export const ContactSection = () => {
                     </div>
                 </div>
 
-                <div className="bg-card p-8 rounded-lg shadow-xs max-w-lg w-full" onSubmit={handleSubmit}>
+                <div className="bg-card p-8 rounded-lg shadow-xs max-w-lg w-full mx-auto">
                     <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
-                    <form className="space-y-6">
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2"> Your Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                placeholder="Jake Makaling..."
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-2"> Your Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                placeholder="john@gmail.com..."
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-2"> Your Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                                placeholder="Hi, I'd like to talk about..."
-                            />
-                        </div>
-
-                        <button 
-                            type="submit" 
-                            disabled={isSubmitting}
-                            className={cn(
-                                "cosmic-button w-full flex items-center justify-center gap-2",
-                            )}
+                    <div className="w-full h-[600px] rounded-md overflow-hidden border border-input">
+                        <iframe 
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfs-uVQJ4kVjzOwO245o3Df6n0jwqMMQFdmlUIh5JRhrJVlFw/viewform?embedded=true" 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            marginHeight="0" 
+                            marginWidth="0"
+                            className="w-full h-full"
                         >
-                            {isSubmitting ? "Sending..." : "Send Message"}
-                            <Send size={16} />
-                        </button>
-                    </form>
+                            Loading…
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>

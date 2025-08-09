@@ -11,4 +11,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://ai-chatbot-teal-beta-72.vercel.app',
+        changeOrigin: true,
+        secure: true,
+      }
+    }
+  }
 });
