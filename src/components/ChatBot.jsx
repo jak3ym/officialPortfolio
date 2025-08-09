@@ -50,6 +50,21 @@ export const ChatBot = () => {
     }
   };
 
+  const getCurrentSection = () => {
+    const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+    
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 200 && rect.bottom >= 200) {
+          return section;
+        }
+      }
+    }
+    return 'hero';
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       sendMessage();
