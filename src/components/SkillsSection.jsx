@@ -24,14 +24,14 @@ const skills = [
     {name: "Terraform", level: 60, category: "devops/cloud"},
     // Database & Messaging
     {name: "MongoDB", level: 80, category: "database"},
-    {name: "ActiveMQ", level: 60, category: "database"},
+    {name: "ActiveMQ", level: 50, category: "database"},
     {name: "Snowflake", level: 75, category: "database"},
     // Development Tools
     {name: "Postman", level: 75, category: "sw tools"},
     {name: "VS Code", level: 100, category: "sw tools"},
     {name: "Wireshark", level: 80, category: "sw tools"},
     {name: "SVN", level: 100, category: "sw tools"},
-    {name: "Selenium", level: 60, category: "sw tools"},
+    {name: "Selenium", level: 50, category: "sw tools"},
     // HW Tools
     {name: "Altium Designer", level: 100, category: "hw tools"},
     {name: "CMW", level: 100, category: "hw tools"},
@@ -42,7 +42,7 @@ const skills = [
     {name: "Network Analyzers", level: 75, category: "hw tools"},
     {name: "CST Studio", level: 75, category: "hw tools"},
     {name: "SolidWorks", level: 65, category: "hw tools"},
-    {name: "Simulink", level: 60, category: "hw tools"},
+    {name: "Simulink", level: 50, category: "hw tools"},
     {name: "LTSpice", level: 100, category: "hw tools"},
     // Project Management
     {name: "Jira", level: 100, category: "project management"},
@@ -65,8 +65,21 @@ export const SkillsSection = () => {
         return categoryMap[category] || category.charAt(0).toUpperCase() + category.slice(1);
     };
 
+    const getSkillLevel = (level) => {
+        return "Advanced";
+        // if (level >= 80) return "Advanced";
+        // else if (level >= 66) return "Intermediate-Advanced";
+        // else if (level >= 33) return "Intermediate";
+        // else return "Beginner";
+    };
+
     const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory
 );
+
+    // Sort skills by level (highest to lowest) when viewing "all" category
+    const sortedSkills = activeCategory === "all" 
+        ? [...filteredSkills].sort((a, b) => b.level - a.level)
+        : filteredSkills;
     return (
         <section id="skills" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
@@ -89,7 +102,7 @@ export const SkillsSection = () => {
                     ))}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredSkills.map((skill, key) => (
+                    {sortedSkills.map((skill, key) => (
                         <div 
                             key={key} 
                             className="bg-card p-6 rounded-lg shadow-xs card-hover"
@@ -105,7 +118,7 @@ export const SkillsSection = () => {
                                 </div>
                                 <div className="text-right mt-1">
                                     <span className="text-sm text-muted-foreground">
-                                        {skill.level}%
+                                        {getSkillLevel(skill.level)}
                                     </span>
                                 </div>
                         </div>
