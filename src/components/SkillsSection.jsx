@@ -12,9 +12,9 @@ const skills = [
     {name: "Verilog", level: 70, category: "backend"},
     {name: "MATLAB", level: 100, category: "backend"},
     // Frontend
-    {name: "React", level: 80, category: "frontend"},
+    {name: "React", level: 70, category: "frontend"},
     {name: "HTML/CSS", level: 70, category: "frontend"},
-    {name: "JavaScript/TypeScript", level: 80, category: "frontend"},
+    {name: "JavaScript/TypeScript", level: 70, category: "frontend"},
     // DevOps & Cloud
     {name: "Jenkins", level: 100, category: "DevOps/cloud"},
     {name: "Github Actions", level: 100, category: "CICD/cloud"},
@@ -30,11 +30,12 @@ const skills = [
     {name: "Postman", level: 75, category: "sw tools"},
     {name: "VS Code", level: 100, category: "sw tools"},
     {name: "Wireshark", level: 80, category: "sw tools"},
-    {name: "SVN", level: 100, category: "sw tools"},
+    {name: "SVN", level: 60, category: "sw tools"},
     {name: "Selenium", level: 50, category: "sw tools"},
     // HW Tools
     {name: "Altium Designer", level: 100, category: "hw tools"},
     {name: "CMW", level: 100, category: "hw tools"},
+    {name: "FreeRTOS", level: 80, category: "hw tools"},
     {name: "Spectrum Analyzers", level: 100, category: "hw tools"},
     {name: "Oscilloscopes", level: 100, category: "hw tools"},
     {name: "Signal Generators", level: 85, category: "hw tools"},
@@ -43,7 +44,11 @@ const skills = [
     {name: "CST Studio", level: 75, category: "hw tools"},
     {name: "SolidWorks", level: 65, category: "hw tools"},
     {name: "Simulink", level: 50, category: "hw tools"},
-    {name: "LTSpice", level: 100, category: "hw tools"},
+    {name: "LTSpice", level: 80, category: "hw tools"},
+    {name: "CAN", level: 100, category: "hw tools"},
+    {name: "SPI", level: 90, category: "hw tools"},
+    {name: "I2C", level: 70, category: "hw tools"},
+    {name: "UART", level: 90, category: "hw tools"},
     // Project Management
     {name: "Jira", level: 100, category: "project management"},
     {name: "Confluence", level: 100, category: "project management"},

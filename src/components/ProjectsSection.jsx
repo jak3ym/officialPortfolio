@@ -15,7 +15,7 @@ const projects = [
     {
         id: 2,
         title: "Wireless Positioning System (RFID) for a balloon catheter to treat hemorrhages",
-        description: "Honors Project",
+        description: "Project utilizing SW/HW/Mech skills",
         image: "/projects/aorta.png",
         tags: ["MATLAB", "CST Studio", "SolidWorks"],
         demoUrl: "https://www.youtube.com/watch?v=VJ3kcuqZVlg",
@@ -24,7 +24,7 @@ const projects = [
     {
         id: 3,
         title: "TinyML CNN deployment in an embedded memory-constrained environment",
-        description: "Project utilising CNN",
+        description: "Embedded AI/ML Project utilizing CNN",
         image: "/projects/cnn.png",
         tags: ["ML/AI", "Python", "Docker", "TensorFlow"],
         demoUrl: "#",
