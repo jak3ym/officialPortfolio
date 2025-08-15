@@ -21,11 +21,13 @@ const skills = [
     {name: "AWS (EC2, S3, RDS, AMI, etc.)", level: 100, category: "devops/cloud"},
     {name: "Linux", level: 80, category: "devops/cloud"},
     {name: "Docker", level: 90, category: "devops/cloud"},
+    {name: "Kubernetes", level: 90, category: "devops/cloud"},  
     {name: "Terraform", level: 60, category: "devops/cloud"},
     // Database & Messaging
     {name: "MongoDB", level: 80, category: "database"},
     {name: "ActiveMQ", level: 50, category: "database"},
     {name: "Snowflake", level: 75, category: "database"},
+    {name: "SQL", level: 80, category: "database"},
     // Development Tools
     {name: "Postman", level: 75, category: "sw tools"},
     {name: "VS Code", level: 100, category: "sw tools"},
